@@ -1,0 +1,38 @@
+{
+  "name": "strumus-httpd",
+  "version": "0.0.1",
+  "description": "The frontend",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel-node -- ./node_modules/.bin/webpack --progress",
+    "start": "babel-node -- ./node_modules/.bin/webpack-dev-server --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strumus/http.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strumus/http/issues"
+  },
+  "homepage": "https://github.com/strumus/http#readme",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-eslint": "^5.0.0-beta4",
+    "babel-loader": "^6.2.0",
+    "css-loader": "^0.23.0",
+    "eslint": "^1.10.3",
+    "eslint-loader": "^1.1.1",
+    "eslint-plugin-react": "^3.11.3",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "babel": "^6.3.13",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  }
+}

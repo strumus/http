@@ -1,0 +1,4 @@
+.streamList {
+	display: flex;
+	flex-wrap: wrap;
+}
