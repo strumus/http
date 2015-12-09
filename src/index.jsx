@@ -2,9 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StreamList from './components/StreamList'
-
-console.log(StreamList);
+import StreamList from './components/StreamList.jsx';
 
 ReactDOM.render(
 	<StreamList />,

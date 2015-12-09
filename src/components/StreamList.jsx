@@ -8,6 +8,7 @@ class StreamPreviewBox extends React.Component {
 	render() {
 		return (
 			<div className="streamPreview">
+				<h2>Stream Name</h2>
 			</div>
 		);
 	}

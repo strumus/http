@@ -1,15 +1,17 @@
 'use strict';
 
-import path from 'path';
-import webpack from 'webpack';
+var path = require('path'),
+	webpack = require('webpack');
 
-export default {
+console.log(path.join(__dirname, 'public'));
+
+module.exports = {
 	entry: [
 		'webpack/hot/dev-server',
-		'./src/index.js'
+		'./src/index.jsx'
 	],
-	output: {
-		path: path.join(__dirname, 'build'),
+	output: {  
+		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -17,7 +19,7 @@ export default {
 			{ test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
 		],
 		loaders: [
-			{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+			{ test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
 			{ test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/ }
 		]
 	},
@@ -25,4 +27,4 @@ export default {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	]
-}
+};
