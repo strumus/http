@@ -2,19 +2,24 @@
 
 
 import React from 'react';
+import { Link } from 'react-router';
+
 import StreamStore from '../../stores/StreamStore';
+import StreamServerActionCreators from '../../actions/StreamServerActionCreators';
+
 import './stream-list.css';
 
 var ReactPropTypes = React.PropTypes;
 
-import StreamServerActionCreators from '../../actions/StreamServerActionCreators';
-
 StreamServerActionCreators.receiveAll([
     {
-        title: "derp"
+        title: "making shit with clone1018"
     },
     {
-        title: "herp"
+        title: "games with seenia"
+    },
+    {
+        title: "porking pigs with citricsquid"
     }
 ]);
 
@@ -28,11 +33,14 @@ class StreamPreviewBox extends React.Component {
     render() {
         var stream = this.props.stream;
         return (
-            <div className="card card-block text-xs-center">
-                <h4 className="card-title">{stream.title}</h4>
+            <div className="card card-inverse text-xs-center">
+                <img className="card-img" src={'http://thecatapi.com/api/images/get?format=src&type=png'} />
+                <div className="card-img-overlay">
+                    <h4 className="card-title">{stream.title}</h4>
 
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <Link to={`/stream/${stream.id}`} className="btn btn-primary">Watch</Link>
+                </div>
             </div>
         );
     }
