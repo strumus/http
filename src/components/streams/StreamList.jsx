@@ -17,7 +17,6 @@ StreamServerActionCreators.receiveAll([
         title: "herp"
     }
 ]);
-console.log(StreamServerActionCreators);
 
 class StreamPreviewBox extends React.Component {
     construct() {
@@ -28,7 +27,6 @@ class StreamPreviewBox extends React.Component {
 
     render() {
         var stream = this.props.stream;
-        console.log(stream);
         return (
             <div className="card card-block text-xs-center">
                 <h4 className="card-title">{stream.title}</h4>
@@ -47,9 +45,10 @@ function getStreamListState() {
 }
 
 class StreamList extends React.Component {
-    construct() {
+    constructor(props) {
+        super(props);
+
         this.state = getStreamListState();
-        console.log(this.state);
     }
 
     componentDidMount() {
@@ -57,7 +56,7 @@ class StreamList extends React.Component {
     }
 
     render() {
-        var allStreams = this.props.allStreams;
+        var allStreams = this.state.allStreams;
         var streams = [];
 
         for (var key in allStreams) {

@@ -36,24 +36,27 @@ class StreamStore extends EventEmitter {
     removeChangeListener(callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
-}
+};
 
-StreamDispatcher.register(function (action) {
-    var text;
+var store = new StreamStore();
 
-    switch (action.actionType) {
+store.dispatchToken = StreamDispatcher.register(function (action) {
+    var title;
+
+    switch (action.type) {
         case StreamConstants.STREAM_CREATE:
             title = action.title.trim();
 
             if (title !== '') {
                 create(title);
-                StreamStore.emitChange();
+                store.emitChange();
             }
             break;
         case StreamConstants.RECEIVE_RAW_STREAMS:
-            _addStreams(action.rawStreams);
+            addStreams(action.rawStreams);
+            store.emitChange();
             break;
     }
 });
 
-export default new StreamStore;
+export default store;
