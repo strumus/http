@@ -17,6 +17,31 @@ StreamServerActionCreators.receiveAll([
     },
     {
         title: "games with seenia"
+    },    {
+        title: "making shit with clone1018"
+    },
+    {
+        title: "games with seenia"
+    },    {
+        title: "making shit with clone1018"
+    },
+    {
+        title: "games with seenia"
+    },    {
+        title: "making shit with clone1018"
+    },
+    {
+        title: "games with seenia"
+    },    {
+        title: "making shit with clone1018"
+    },
+    {
+        title: "games with seenia"
+    },    {
+        title: "making shit with clone1018"
+    },
+    {
+        title: "games with seenia"
     },
     {
         title: "porking pigs with citricsquid"
@@ -34,7 +59,7 @@ class StreamPreviewBox extends React.Component {
         var stream = this.props.stream;
         return (
             <div className="card card-inverse text-xs-center">
-                <img className="card-img" src={'http://thecatapi.com/api/images/get?format=src&type=png'} />
+                <img className="card-img" src={`http://thecatapi.com/api/images/get?format=src&type=png&derp=${stream.id}`} />
                 <div className="card-img-overlay">
                     <h4 className="card-title">{stream.title}</h4>
 
@@ -72,7 +97,7 @@ class StreamList extends React.Component {
         }
 
         return (
-            <div className="card-deck">
+            <div className="card-columns">
                 {streams}
             </div>
         );

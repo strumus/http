@@ -3,8 +3,6 @@
 var path = require('path'),
     webpack = require('webpack');
 
-console.log(path.join(__dirname, 'public'));
-
 module.exports = {
     entry: [
         'webpack/hot/dev-server',
@@ -18,8 +16,8 @@ module.exports = {
         loaders: [
             {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
             {test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/},
-            {test: /\.css$/, loader: 'style-loader!css-loader', exclude: /node_modules/},
-            {test: /\.scss$/, loaders: ["style", "css", "sass"]}
+            {test: /\.scss$/, loaders: ["style", "css", "autoprefixer", "sass"]},
+            {test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader', exclude: /node_modules/}
         ]
     },
     plugins: [
